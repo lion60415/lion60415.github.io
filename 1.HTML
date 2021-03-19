@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .r1 {
+      display: inline-block;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    <h1>東南小吃</h1>
+    <h2>本日餐點</h2>
+  </div>
+
+  <div>
+    <fieldset class="r1">
+      <legend align="center">拉麵</legend>
+      <img width="200px" height="150px"
+        src="img/12.jfif">
+      <h3>每碗150元，碗數</h3>
+      <select id="r">
+        <option value="0" selected>請選擇</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+
+      </select>
+    </fieldset>
+    <fieldset class="r1">
+      <legend align="center">排骨飯</legend>
+      <img width="200px" height="150px"
+        src="img/13.jfif">
+      <h3>每碗100元，碗數</h3>
+      <select id="p">
+        <option value="0" selected>請選擇</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+
+      </select>
+    </fieldset>
+    <fieldset class="r1">
+      <legend align="center">滷肉飯</legend>
+      <img width="200px" height="150px"
+        src="img/14.jfif">
+      <h3>每碗60元，碗數</h3>
+      <select id="d">
+        <option value="0" selected>請選擇</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+
+      </select>
+    </fieldset>
+    <input type="button" id="submit" value="結帳">
+    
+  </div>
+  <textarea id="s1" width="300px" height="300px" ></textarea>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script language="javascript">
+    $("#submit").click(function () {
+      var sum = 0;
+      var str="您點了\n";
+      var select1 = $("#r").val();
+      var select2 = $("#p").val();
+      var select3 = $("#d").val();
+      if (select1 !=0)
+      {
+        str+="拉麵(150) X "+select1+"碗="+(select1*150)+"\n";
+      }
+      if (select2 !=0)
+      {
+        str+="排骨飯(100) X "+select2+"碗="+(select2*100)+"\n";
+      }
+      if (select3 !=0)
+      {
+        str+="滷肉飯(60) X "+select3+"碗="+(select3*60)+"\n";
+      }
+      sum = select1 * 150 + select2 * 100 + select3 * 60;
+      str+="合計:"+sum+"元";
+  
+      console.log(sum);
+      $("#s1").val(str);
+
+    });
+  </script>
+
+  </div>
+
+</body>
+
+</html>
