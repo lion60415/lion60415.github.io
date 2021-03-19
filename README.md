@@ -1,5 +1,5 @@
 # lion60415.github.io
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
